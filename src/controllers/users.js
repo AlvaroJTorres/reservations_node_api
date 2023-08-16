@@ -20,3 +20,9 @@ export const create = async (req, res) => {
     res.json(e)
   }
 };
+
+export const show = async (req, res) => {
+  const id = req.params.id
+  const user = await User.findById(id)
+  res.send(user)
+};
