@@ -26,3 +26,14 @@ export const show = async (req, res) => {
   const user = await User.findById(id)
   res.send(user)
 };
+
+export const update = async (req, res) => {
+  const {name, email, role} = req.body
+  const id = req.params.id
+
+  const user = await User.findByIdAndUpdate(id, {name, email, role}, {new: true})
+
+  if(!user) return res.status(404).send(`The User with id ${id} was not found`)
+
+  res.send(user)
+};

@@ -8,3 +8,5 @@ usersRouter.get("/", usersController.index);
 usersRouter.post("/", usersController.create);
 
 usersRouter.get("/:id", usersController.show);
+
+usersRouter.patch("/:id", usersController.update);
