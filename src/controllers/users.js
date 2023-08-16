@@ -1,7 +1,5 @@
 import { User } from "../models/user.js";
 
-let users = [];
-
 export const index = async (req, res) => {
   const users = await User.find();
   res.send(users);
