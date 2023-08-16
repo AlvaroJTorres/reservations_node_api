@@ -14,10 +14,10 @@ export const create = async (req, res) => {
 
   try {
     await newUser.save()
-    res.json(newUser)
+    res.send(newUser)
   } catch (e) {
     console.error(e)
-    res.json(e)
+    res.send(e)
   }
 };
 
