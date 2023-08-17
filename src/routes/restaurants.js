@@ -8,3 +8,5 @@ restaurantsRouter.get("/", restaurantsController.index);
 restaurantsRouter.post("/", restaurantsController.create);
 
 restaurantsRouter.get("/:id", restaurantsController.show);
+
+restaurantsRouter.patch("/:id", restaurantsController.update);
