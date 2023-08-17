@@ -6,3 +6,5 @@ export const restaurantsRouter = Router();
 restaurantsRouter.get("/", restaurantsController.index);
 
 restaurantsRouter.post("/", restaurantsController.create);
+
+restaurantsRouter.get("/:id", restaurantsController.show);
