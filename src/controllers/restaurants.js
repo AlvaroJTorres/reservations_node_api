@@ -24,3 +24,14 @@ export const show = async (req, res) => {
   const restaurant = await Restaurant.findById(id)
   res.send(restaurant)
 };
+
+export const update = async (req, res) => {
+  const {name, address, manager} = req.body
+  const id = req.params.id
+
+  const restaurant = await Restaurant.findByIdAndUpdate(id, {name, address, manager}, {new: true})
+
+  if(!restaurant) return res.status(404).send(`The User with id ${id} was not found`)
+
+  res.send(restaurant)
+}
