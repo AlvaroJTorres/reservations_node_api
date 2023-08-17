@@ -18,3 +18,9 @@ export const create = async (req, res) => {
     res.send(e)
   }
 };
+
+export const show = async (req, res) => {
+  const id = req.params.id
+  const restaurant = await Restaurant.findById(id)
+  res.send(restaurant)
+};
