@@ -34,4 +34,14 @@ export const update = async (req, res) => {
   if(!restaurant) return res.status(404).send(`The User with id ${id} was not found`)
 
   res.send(restaurant)
-}
+};
+
+export const destroy = async (req, res) => {
+  const id = req.params.id
+  try {
+    await Restaurant.findByIdAndDelete(id)
+    res.status(204).send(null)
+  } catch(e) {
+    res.send(e)
+  }  
+};
