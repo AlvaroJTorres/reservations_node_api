@@ -1,6 +1,6 @@
-import mongoose from "mongoose";
+import mongoose, { Schema } from "mongoose";
 
-const userSchema = new mongoose.Schema({
+const userSchema = new Schema({
   name: {
     type: String,
     required: true
@@ -14,6 +14,10 @@ const userSchema = new mongoose.Schema({
     type: String,
     enum: ["customer", "admin", "manager"],
     default: "customer"
+  },
+  restaurant : {
+    type: Schema.Types.ObjectId,
+    ref: "Restaurant"
   }
 })
 
