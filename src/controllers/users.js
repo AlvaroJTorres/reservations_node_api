@@ -1,7 +1,7 @@
 import { User } from "../models/user.js";
 
 export const index = async (req, res) => {
-  const users = await User.find();
+  const users = await User.find().populate("restaurant", "name -_id");
   res.send(users);
 }
 
